@@ -1,0 +1,204 @@
+/*!
+ * 团购详情
+ */
+
+//单列商品样式
+.g-item{
+	@include clearfix;
+	padding: rem(20);
+	.lt{
+	 	float: left;
+	 	margin-right: rem(20);
+	 	width: rem(130);
+	 	height: rem(130);
+	 	border: 1px solid $color-border;
+	 	img{
+			width: 100%;
+	 	}
+	}
+	.rt{
+		position: relative;
+		padding-bottom: rem(40);
+		overflow: hidden;
+		min-height: rem(130);
+		font-size: rem(28);
+		h3{
+			line-height: 1.3;
+			font-weight: normal;
+			color: #1a1a1a;
+			font-size: rem(28);
+		}
+		p{
+			color: $color-gray;
+		}
+		.fix{
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+		}
+		.price{
+			color: $color-red;
+			line-height: 1.2;
+			.new{
+				margin-right: 5px;
+				font-size: rem(34);
+			}
+			del{
+				color: $color-gray;
+			}
+			small{
+				float: right;
+				margin-top: rem(12);
+			}
+		}
+	}
+}
+
+//团购倒计时 + 团购人数
+.g-countdown{
+	text-align: center;
+	font-size: rem(28);
+	.timer{
+		display: inline-block;
+		vertical-align: 1px;
+		margin: 0 rem(5);
+		font-weight: bold;
+		font-size: rem(26);
+		span{
+			display: inline-block;
+			margin: 0 rem(6);
+			padding: rem(13) rem(7.5);
+			border-radius: rem(7.5);
+			line-height: 1;
+			background-color: #555;
+			font-weight: normal;
+			color: #fff;
+		}
+	}
+	.cont{
+		margin-top: rem(20);
+		padding: rem(24) 0;
+		background-color: #fff;
+		text-align: center;
+	}
+	.grouper{
+		margin: 0 rem(75);
+		padding-bottom: rem(7.5);
+		span{
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 rem(5) rem(15) rem(5);
+			width: rem(66);
+			height: rem(66);
+			border-radius: 100%;
+			border: 1px dashed $color-red;
+			img{
+				border-radius: 100%;
+				width: 100%;
+			}
+	  		&.active{
+	    		border-color: $color-border;
+		    	p{
+					position: absolute;
+					bottom: rem(-12);
+					left: 50%;
+					padding: 0 rem(10);
+					transform: translateX(-50%);
+					white-space: nowrap;
+					border-radius: rem(30);
+					background-color: $color-red;
+					font-size: rem(20);
+					color: #fff;
+		    	}
+	  		}
+		}
+	}
+	.warn{
+		margin-top: 2px;
+		font-size: rem(26);
+	}
+	.date{
+		margin-top: 2px;
+		font-size: rem(24);
+		color: $color-gray;
+	}
+}
+
+//更多团购
+.g-moregroup{
+	margin-top: rem(20);
+	h3{
+		padding: rem(7.5) 0;
+		text-align: center;
+		font-weight: normal;
+		font-size: rem(30);
+	}
+	.cont{
+		@include clearfix;
+	}
+}
+
+
+.defaultBlock{
+	float: left;
+	margin: rem(20) 0 0 20 / 750 * 100%;
+	width: 345 / 750 * 100%;
+	background-color: #fff;
+	.entranceMap{
+		img{
+			width: 100%;
+		}
+	}
+	.rim{
+		padding: rem(7.5) rem(20);
+	}
+	.mainTitle{
+		min-height: rem(70);
+		line-height: 1.4;
+		font-size: rem(24);
+	}
+	.zhe{
+		float: right;
+		margin-top: rem(7.5);
+	}
+	.new{
+		color: #fc4a9e;
+		em{
+		  font-size: rem(30);
+		  font-style: normal;
+		}
+	}
+	del{
+		color: $color-gray;
+	}
+}
+
+
+.foot-btns{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	.btn{
+		@include flexbox;
+		height: rem(100);
+		line-height: rem(100);
+		border-top: 1px solid $color-border;
+		text-align: center;
+		> a{
+			@include flex;
+			font-size: rem(30);
+		}
+		.more{
+			background-color: #fff;
+			color: $color-red;
+		}
+		.invite{
+			background-color: $color-red;
+			color: #fff;
+		}
+	}
+}

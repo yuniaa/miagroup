@@ -1,0 +1,264 @@
+/*!
+ * 抱团价 + 抱团步骤说明
+ */
+
+//抱团价
+.g-price{
+	font-size: 16px;
+	color: $color-red;
+	span{
+		margin-right: 5px;
+		font-size: 21px;
+	}
+	del{
+		margin-right: 5px;
+		font-size: 13px;
+		color: $color-gray;
+	}
+	i{
+		padding: 2px;
+		border-radius: 3px;
+		vertical-align: 2px;
+		font-style: normal;
+		background: $color-red;
+		color: #fff;
+		font-size: 12px;
+	}
+}
+
+//抱团步骤
+$step-color: #fe4e55;
+%status{
+	.num{
+		border-color: $step-color;
+		background-color: $step-color;
+		color: #fff;
+	}
+	.desc{
+		color: $step-color;
+	}
+	&:after{
+		display: block !important;
+	}
+}
+%status-wait{
+	@extend %status;
+	&:after{
+		width: 50%;
+	}
+}
+%status-success{
+	@extend %status;
+	&:after{
+		width: 100%;
+	}
+}
+
+.g-step{
+	padding: 8px;
+	.title{
+		@include clearfix;
+		line-height: 1.5;
+		h3{
+			float: left;
+			margin: 2px 5px 0 0;
+			width: 68px;
+			height: 18px;
+			background: url(../images/miagroup.png) no-repeat;
+			background-size: 100% auto;
+			font-size: 0;
+		}
+		span{
+			float: left;
+			margin-top: 3px;
+			font-size: 12px;
+		}
+		.rule{
+			float: right;
+			font-size: 14px;
+			color: #333;
+			&:after{
+				margin-left: 5px;
+				font-family: "miaicon";
+				content: '\e806';
+			}
+		}
+	}
+	.stepbar{
+		position: relative;
+		margin: 25px auto 50px auto;
+		width: 75%;
+		height: 8px;
+		background-color: #fff;
+		ul{
+			@include flexbox;
+			position: relative;
+			top: -6px;
+			margin: 0 -17%;
+		}
+		li{
+			@include flex(1);
+			position: relative;
+			text-align: center;
+			&:last-child{
+				&:after{
+					display: none !important;
+				}
+			}
+			&:after{
+				display: none;
+				position: absolute;
+				top: 6px;
+				content: '';
+				height: 8px;
+				border-radius: 1em;
+				background-color: $step-color;
+			}
+			&:after{
+				left: 50%;
+			}
+			//状态1 等待
+			&.wait{
+				@extend %status-wait;
+			}
+			//状态2 成功
+			&.success{
+				@extend %status-success;
+			}
+		}
+		.num{
+			position: relative;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #f2f2f2;
+			border-radius: 100%;
+			background-color: #fff;
+			color: $step-color;
+			z-index: 5;
+		}
+		.desc{
+			margin-top: 5px;
+		}
+	}
+	&.skin1{
+		background-color: #fff;
+		color: #666;
+		.stepbar{
+			background-color: #f6f6f6;
+		}
+		.rule{
+			color: #666;
+		}
+	}
+	&.skin2{
+		background-color: #ffece8;
+		color: #967d7d;
+		.stepbar{
+			background-color: #fff;
+		}
+		.rule{
+			color: #967d7d;
+		}
+	}
+}
+
+//底部
+.foot-cart{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #dcdcdc;
+	background-color: #fff;
+	.cart{
+		position: relative;
+		float: left;
+		margin: 6px 0 0 5px;
+		width: 40px;
+		height: 40px;
+		background: url(../images/icoChe_02.png) center no-repeat;
+		background-size: 22px auto;
+		span{
+			position: absolute;
+			top: 0;
+			left: 13px;
+			padding: 0 3px;
+			height: 14px;
+			line-height: 14px;
+			border-radius: 20px;
+			border: 1px solid #f34fa1;
+			font-size: 10px;
+			text-align: center;
+			color: #f34fa1;
+		}
+	}
+	.btns{
+		@include flexbox;
+		float: right;
+		width: 50%;
+		height: 100%;
+		a{
+			@include flex;
+			line-height: 1.4;
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			p{
+				margin-top: 3px;
+				font-size: 18px;
+			}
+			&.s1{
+				background-color: #ff96c6;
+			}
+			&.s2{
+				background-color: #fa4b9b;
+			}
+		}
+	}
+}
+
+
+/*
+ * 方法二
+ */
+
+[data-step="1"] {
+	li:nth-child(1){
+		@extend %status-wait;
+	}
+}
+[data-step="2"] {
+	li:nth-child(1){
+		@extend %status-success;
+	}
+	li:nth-child(2){
+		@extend %status-wait;
+	}
+}
+[data-step="3"] {
+	li:nth-child(1){
+		@extend %status-success;
+	}
+	li:nth-child(2){
+		@extend %status-success;
+	}
+	li:nth-child(3){
+		@extend %status-wait;
+	}
+}
+[data-step="4"] {
+	li:nth-child(1){
+		@extend %status-success;
+	}
+	li:nth-child(2){
+		@extend %status-success;
+	}
+	li:nth-child(3){
+		@extend %status-success;
+	}
+	li:nth-child(4){
+		@extend %status-success;
+	}
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<title>我的抱团</title>
+<link rel="stylesheet" href="css/css.css">
+<script src="dist/flexible.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+	
+	<div class="g-tab">
+		<span class="cur">全部</span>
+		<span>等待抱团</span>
+		<span>抱团成功</span>
+		<span>抱团失败</span>
+	</div>
+
+	<div class="g-tab-cont">
+		<div class="tit">
+			<div class="lt"><span class="status">等待抱团</span>退货单号：12345678</div>
+			<div class="rt">2015-11-03 18:20:22</div>
+		</div>
+		<div class="g-item">
+			<div class="lt">
+				<img src="images/blank1_1.png" alt="">
+			</div>
+			<div class="rt">
+				<h3><div class="tag"><span>3</span>人团</div>Bees 小蜜蜂 【免税店】神奇万用紫草膏两个装（15g*2）</h3>	
+				<p class="fix num">
+					<span class="status">抱团状态</span>
+					¥99 x 1
+				</p>
+			</div>
+		</div>
+		<div class="total">
+			<div class="lt">
+				总计：<span>¥23</span>
+			</div>
+			<div class="rt">
+				<a href="#">抱团详情</a>
+				<a href="#">查看订单</a>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+<script>
+$(function(){
+	$('.g-tab').on('click', 'span', function() {
+		$(this).addClass('cur').siblings('span').removeClass('cur')
+	});
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/*!
+ * 抱团首页
+ */
+.g-list{
+	background-color: #fff;
+	h2{
+		line-height: 2.8;
+		text-align: center;
+		font-weight: normal;
+		font-size: rem(30);
+		&:before, &:after{
+			content: '-';
+			margin: 0 rem(10)
+		}
+	}
+	.lists{
+		font-size: rem(26);
+		> li{
+			@include clearfix;
+			position: relative;
+			margin-top: -1px;
+			border: 1px solid #d7d7d7;
+			> a{
+				display: block;
+				padding: rem(30) rem(20);
+			}
+		}
+	}
+	.lt{
+		position: relative;
+		float: left;
+		margin-right: rem(20);
+		width: rem(240);
+		height: rem(240);
+		border: 1px solid #d7d7d7;
+		&:before{
+			position: absolute;
+			content: '';
+			width: rem(120);
+			height: rem(52);
+			top: rem(-10.5);
+			background: url(../images/tfl.png) no-repeat;
+			background-size: 100% auto;
+		}
+	}
+	.rt{
+		position: relative;
+		overflow: hidden;
+		min-height: rem(240);
+		line-height: 1.25;
+		h5{
+			margin-bottom: 4px;
+			font-weight: normal;
+			font-size: rem(30);
+			color: $color-title;
+		}
+		p{
+			color: $color-gray;
+		}
+		.sum{
+			color: $color-red;
+			position: absolute;
+			left: 0;
+			bottom: -4px;
+			strong{
+				span{
+					font-size: rem(42);
+				}
+			}
+		}
+	}
+	.btn{
+		position: absolute;
+		right: rem(20);
+		bottom: rem(30);
+		border-radius: rem(10);
+		border: 1px solid $color-red;
+		line-height: 2;
+		color: $color-red;
+		overflow: hidden;
+		a{
+			float: right;
+			padding: 0 rem(16);
+			background-color: $color-red;
+			color: #fff;
+		}
+		span{
+			padding: 0 rem(20);
+		}
+		&.soldout{
+			$color-out : #b6b6b6;
+			border-color: $color-out;
+			a{
+				background-color: $color-out;
+			}
+			span{
+				color: $color-out;
+			}
+		}
+	}
+}
+

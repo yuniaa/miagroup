@@ -1,0 +1,100 @@
+/*!
+ * 弹层
+ */
+
+//弹层遮罩
+.popBox{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.7);
+	z-index: 1000;
+	@include center-children;
+}
+
+//弹层共用
+.pop{
+	$width: 560;
+	$height: 450;
+	position: relative;
+	padding: rem(30);
+	width: rem($width);
+	height: rem($height);
+	background-color: #fff;
+	border-radius: rem(20);
+	font-size: rem(30);
+	.close{
+		position: absolute;
+		left: 50%;
+		bottom: rem(-100);
+		margin-left: rem(-75 / 2);
+		width: rem(75);
+		height: rem(75);
+		background: url('../images/icon_cancel.png') no-repeat center;
+		background-size: rem(44) auto;
+	}
+}
+
+//表单弹层
+.pop-form{
+	dt{
+		margin-bottom: rem(20);
+		font-size: rem(30);
+	}
+	dd{
+		@include clearfix;
+		margin-bottom: rem(20);
+	}
+	.ipt-tel, .ipt-yzm{
+		display: block;
+		padding: rem(19) 0;
+		background-color: #f6f6f6;
+		border-radius: rem(7.5);
+		border: none;
+		font: inherit;
+		text-indent: 0.7em;
+	}
+	.ipt-tel{
+		width: 100%;
+	}
+	.ipt-yzm{
+		float: left;
+		width: rem(280);
+	}
+	.btn-yzm{
+		float: right;
+		border: none;
+		width: rem(200);
+		height: rem(80);
+		background-color: $color-pink;
+		border-radius: rem(7.5);
+		color: #fff;
+	}
+	.btn-submit{
+		margin-top: rem(30);
+		border: none;
+		width: 100%;
+		height: rem(80);
+		background-color: $color-pink;
+		border-radius: rem(7.5);
+		color: #fff;
+	}
+}
+
+//支付成功
+.pop-success{
+	text-align: center;
+	h1{
+		margin: rem(120) 0 rem(120) 0;
+		font-size: rem(36);
+		color: $color-pink;
+	}
+	aside{
+		font-size: rem(26);
+		span{
+			color: $color-pink;
+		}
+	}
+}

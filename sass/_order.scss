@@ -1,0 +1,54 @@
+/*!
+ * 订单
+ */
+
+.g-order{
+	.info{
+		dl{
+			padding: rem(20);
+			border-bottom: 1px solid #ebebeb;
+			font-size: rem(28);
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+		dt{
+			margin-bottom: 2px;
+		}
+		dd{
+			color: $color-gray;
+		}
+	}
+	.total{
+		.tit{
+			padding: 0 rem(20);
+			line-height: rem(80);
+			font-weight: normal;
+			font-size: rem(20);
+			border-bottom: 1px solid $color-border;
+		}
+		.g-item{
+			border-bottom: 1px solid $color-border;
+		}
+	}
+	.row{
+		dl{
+			@include clearfix;
+			padding: 0 rem(20);
+			height: rem(80);
+			line-height: rem(80);
+			border-bottom: 1px solid $color-border;
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+		dt{
+			float: left;
+			color: $color-gray;
+		}
+		dd{
+			float: right;
+		}
+	}
+}
+

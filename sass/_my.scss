@@ -1,0 +1,104 @@
+/*!
+ * 我的抱团
+ */
+
+//选项卡
+.g-tab{
+	@include flexbox;
+	height: rem(78);
+	line-height: rem(78);
+	border-bottom: 1px solid $color-border;
+	font-size: rem(30);
+	text-align: center;
+	background-color: #fff;
+	> span{
+		@include flex;
+		position: relative;
+		display: block;
+		&.cur{
+			color: $color-pink;
+			&:after{
+				position: absolute;
+				content: '';
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 2px;
+				background: $color-pink;
+			}
+		}
+	}
+}
+.g-tab-cont{
+	margin-top: rem(20);
+	background-color: #fff;
+	.tit{
+		height: rem(72);
+		line-height: rem(72);
+		font-size: rem(22);
+		.lt{
+			float: left;
+			color: #353535;
+		}
+		.rt{
+			float: right;
+			margin-right: rem(20);
+			color: $color-gray;
+		}
+		.status{
+			float: left;
+			padding: 0 rem(10);
+			background-color: #fffdef;
+			font-size: rem(30);
+		}
+	}
+	.g-item{
+		border-top: 1px solid $color-border;
+		.tag{
+			display: inline;
+			margin-right: rem(7.5);
+			padding: rem(3) rem(6);
+			vertical-align: 2px;
+			background-color: $color-pink;
+			border-radius: 2px;
+			font-size: rem(24);
+			color: #fff;
+		}
+		.num{
+			font-size: rem(26);
+		}
+		.status{
+			float: right;
+			color: $color-pink;
+		}
+	}
+	.total{
+		@include clearfix;
+		padding: rem(20);
+		border-top: 1px solid $color-border;
+		.lt{
+			float: left;
+			font-size: rem(36);
+			span{
+				color: $color-pink;
+			}
+		}
+		.rt{
+			float: right;
+			font-size: 0;
+			a{
+				display: inline-block;
+				vertical-align: top;
+				margin-left: rem(20);
+				padding: 0 rem(14);
+				height: rem(56);
+				line-height: rem(56);
+				border-radius: rem(7.5);
+				border: 1px solid $color-border;
+				font-size: rem(28);
+				color: #333;
+				text-align: center;
+			}
+		}
+	}
+}

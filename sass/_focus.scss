@@ -1,0 +1,38 @@
+/*!
+ * 焦点图
+ */
+.g-focus{
+	position: relative;
+	.brand{
+		position: absolute;
+		right: 0;
+		bottom: rem(54);
+		padding-right: rem(32);
+		line-height: rem(60);
+		background-color: #000;
+		color: #fff;
+		span{
+			display: block;
+			min-width: rem(84);
+			text-align: center;
+		}
+		&:before{
+			position: absolute;
+			content: '';
+			left: rem(-14);
+			width: 0;
+			height: 0;
+			border-top: rem(30) solid #000;
+			border-left: rem(15) solid transparent;
+			border-bottom: rem(30) solid #000;
+		}
+		&:after{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: rem(30);
+			font-family: "miaicon";
+			content: '\e806';
+		}
+	}
+}
